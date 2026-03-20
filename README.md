@@ -40,7 +40,7 @@ O **FitTrack** é uma aplicação web Full Stack projetada para centralizar info
    git clone https://github.com/seu-usuario/fittrack.git
 
 
-    1. Instale o framework Flask:
+1. Instale o framework Flask:
 code
 Bash
 pip install flask
