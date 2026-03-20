@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>FitTrack | Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+        <a class="logo" href="{{ url_for('index') }}">FitTrack</a>
+    </nav>
+  </header>
+  <main>
+    <section class="form-box" style="max-width: 420px; margin: 40px auto;">
+      <h1>Login</h1>
+      <form action="/login" method="POST">
+        <label>E-mail</label>
+        <input type="email" name="email" required placeholder="admin@fit.com">
+        <label>Senha</label>
+        <input type="password" name="senha" required placeholder="123456">
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

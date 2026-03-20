@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>FitTrack | Painel</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="#">FitTrack - Painel</a>
+      <div class="menu">
+        <a href="{{ url_for('logout') }}">Sair</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="notice">Usuário logado: {{ session['user_email'] }}</div>
+    <section class="grid">
+      <div class="card">
+        <h2>Artigos do Banco de Dados</h2>
+        <ul>
+          {% for artigo in artigos %}
+          <li><a href="{{ artigo.url }}" target="_blank">{{ artigo.titulo }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Ações</h2>
+        <p>Dados vindos diretamente do SQLite.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

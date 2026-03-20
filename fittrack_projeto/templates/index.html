@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>FitTrack | Início</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="{{ url_for('index') }}">FitTrack</a>
+      <div class="menu">
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('painel') }}">Área logada</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Site de saúde e exercícios</h1>
+      <p>Agora conectado a um banco de dados Python!</p>
+      <div class="top-actions">
+        <a class="button" href="{{ url_for('login') }}">Entrar</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
