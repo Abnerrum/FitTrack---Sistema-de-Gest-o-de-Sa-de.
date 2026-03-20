@@ -60,6 +60,3 @@ code
 Code
 ---
 
-### Dica Extra: Tags (Topics) do Repositório
-No GitHub, adicione estas "tags" para que as pessoas encontrem seu projeto mais facilmente:
-
