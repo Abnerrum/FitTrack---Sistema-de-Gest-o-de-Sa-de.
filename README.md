@@ -49,3 +49,17 @@ code
 Bash
 python app.py
 
+3. Acesse no seu navegador: http://127.0.0.1:5000
+🔑 Credenciais de Teste
+E-mail: admin@fit.com
+Senha: 123456
+
+📝 Licença
+Este projeto foi desenvolvido para fins de estudo e portfólio. Sinta-se à vontade para clonar e modificar!
+code
+Code
+---
+
+### Dica Extra: Tags (Topics) do Repositório
+No GitHub, adicione estas "tags" para que as pessoas encontrem seu projeto mais facilmente:
+
