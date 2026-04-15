@@ -75,14 +75,21 @@ O **FitTrack** foi desenvolvido para apoiar pacientes durante a preparação par
 ## 📁 Estrutura do Projeto
 
 ```bash
+## 📁 Estrutura do Projeto
+
+```bash
 fittrack/
-├── app.py
-├── init_db.py
-├── requirements.txt
-├── fittrack.db
+├── app.py                 # Servidor Flask principal
+├── init_db.py             # Inicialização do banco de dados
+├── requirements.txt       # Dependências do projeto
+├── fittrack.db            # Banco SQLite
+│
 ├── static/
-│   ├── css/style.css
-│   └── js/main.js
+│   ├── css/
+│   │   └── style.css      # Estilos personalizados
+│   └── js/
+│       └── main.js        # Scripts JavaScript
+│
 └── templates/
     ├── base.html
     ├── index.html
@@ -92,27 +99,3 @@ fittrack/
     ├── artigos.html
     ├── artigo_detalhe.html
     └── demo_exercicios.html
-
-🚀 Como Executar
-
-# Clone o projeto
-git clone https://github.com/seu-usuario/fittrack.git
-cd fittrack
-
-# Crie ambiente virtual
-python -m venv venv
-
-# Ative o ambiente
-# Windows
-venv\Scripts\activate
-# Linux/Mac
-source venv/bin/activate
-
-# Instale dependências
-pip install -r requirements.txt
-
-# Inicialize o banco
-python init_db.py
-
-# Execute o projeto
-python app.py
