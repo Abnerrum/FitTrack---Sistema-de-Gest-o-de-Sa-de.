@@ -92,3 +92,27 @@ fittrack/
     ├── artigos.html
     ├── artigo_detalhe.html
     └── demo_exercicios.html
+
+🚀 Como Executar
+
+# Clone o projeto
+git clone https://github.com/seu-usuario/fittrack.git
+cd fittrack
+
+# Crie ambiente virtual
+python -m venv venv
+
+# Ative o ambiente
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+
+# Instale dependências
+pip install -r requirements.txt
+
+# Inicialize o banco
+python init_db.py
+
+# Execute o projeto
+python app.py
