@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container h-100 d-flex align-items-center">
+        <div class="row w-100">
+            <div class="col-lg-6 text-white">
+                <h1 class="display-4 fw-bold mb-4">Preparação Física para Cirurgia Bariátrica</h1>
+                <p class="lead mb-4">Comece sua transformação antes da cirurgia. Exercícios adaptados, acompanhamento especializado e conteúdo exclusivo para seu sucesso.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="{{ url_for('login') }}" class="btn btn-light btn-lg px-4">Começar Agora</a>
+                    <a href="{{ url_for('demo') }}" class="btn btn-outline-light btn-lg px-4">
+                        <i class="fas fa-play-circle me-2"></i>Ver Demo
+                    </a>
+                    <a href="{{ url_for('exercicio_3d') }}" class="btn btn-info btn-lg px-4">
+                        <i class="fas fa-cube me-2"></i>Experimentar 3D
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm">
+                    <i class="fas fa-dumbbell fa-3x text-primary mb-3"></i>
+                    <h3 class="h2 text-primary">8+</h3>
+                    <p class="text-muted">Exercícios Especializados</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm">
+                    <i class="fas fa-book-medical fa-3x text-success mb-3"></i>
+                    <h3 class="h2 text-success">5+</h3>
+                    <p class="text-muted">Artigos de Saúde</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm">
+                    <i class="fas fa-cube fa-3x text-info mb-3"></i>
+                    <h3 class="h2 text-info">3D</h3>
+                    <p class="text-muted">Animações Interativas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Exercícios Preview -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Exercícios Recomendados</h2>
+        <div class="row g-4">
+            {% for ex in exercicios %}
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary me-2">{{ ex.categoria }}</span>
+                            <small class="text-muted">{{ ex.duracao_minutos }} min</small>
+                        </div>
+                        <h5 class="card-title">{{ ex.nome }}</h5>
+                        <p class="card-text text-muted">{{ ex.descricao[:80] }}...</p>
+                        <span class="badge bg-{{ 'success' if ex.intensidade == 'Baixa' else 'warning' if ex.intensidade == 'Moderada' else 'danger' }}">
+                            {{ ex.intensidade }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg me-2">Ver Todos os Exercícios</a>
+            <a href="{{ url_for('exercicio_3d') }}" class="btn btn-info btn-lg">
+                <i class="fas fa-cube me-2"></i>Ver em 3D
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Artigos Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Últimos Artigos</h2>
+        <div class="row g-4">
+            {% for artigo in artigos %}
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body">
+                        <span class="badge bg-secondary mb-2">{{ artigo.categoria }}</span>
+                        <h5 class="card-title">{{ artigo.titulo }}</h5>
+                        <p class="card-text text-muted">{{ artigo.resumo[:100] }}...</p>
+                        <a href="{{ url_for('artigo_detalhe', id=artigo.id) }}" class="btn btn-outline-primary btn-sm">Ler mais</a>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <small class="text-muted"><i class="fas fa-user me-1"></i>{{ artigo.autor }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Pronto para transformar sua vida?</h2>
+        <p class="lead mb-4">Cadastre-se gratuitamente e tenha acesso a todos os exercícios, artigos e animações 3D exclusivas.</p>
+        <a href="{{ url_for('login') }}" class="btn btn-light btn-lg px-5">Criar Conta Grátis</a>
+    </div>
+
+</section>
+
+{% endblock %}

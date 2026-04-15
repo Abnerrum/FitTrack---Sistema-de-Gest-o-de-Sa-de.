@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+
+{% block title %}Demonstração de Exercícios{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold"><i class="fas fa-running text-primary me-3"></i>Como Fazer os Exercícios</h1>
+        <p class="lead text-muted">Veja como executar cada movimento corretamente com nossa instrutora virtual</p>
+    </div>
+
+    <!-- Personagem Instrutora -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card border-0 shadow-lg bg-gradient-instrutora text-white p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center">
+                        <div class="instrutora-avatar mb-3">
+                            <i class="fas fa-user-ninja fa-6x"></i>
+                        </div>
+                        <h4 class="mb-0">Instrutora Ana</h4>
+                        <small>Especialista em Pré-Bariátrica</small>
+                    </div>
+                    <div class="col-md-8">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Olá! Vou te mostrar como fazer cada exercício de forma segura e eficaz. Lembre-se: qualidade é mais importante que quantidade!"</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Caminhada -->
+    <div class="row g-4 mb-5">
+        <div class="col-12">
+            <h2 class="h3 mb-4 border-start border-4 border-primary ps-3">1. Caminhada Leve</h2>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-walking me-2"></i>Passo a Passo</h5>
+                </div>
+                <div class="card-body">
+                    <div class="demo-steps">
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">1</div>
+                            <div>
+                                <h6 class="mb-1">Postura Inicial</h6>
+                                <p class="text-muted mb-0 small">Fique em pé, pés afastados na largura dos ombros, olhos na frente.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">2</div>
+                            <div>
+                                <h6 class="mb-1">Aquecimento</h6>
+                                <p class="text-muted mb-0 small">Gire os tornozelos, joelhos e quadril suavemente por 2 minutos.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">3</div>
+                            <div>
+                                <h6 class="mb-1">Inicie a Marcha</h6>
+                                <p class="text-muted mb-0 small">Comece caminhando no lugar, levantando os joelhos moderadamente.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex">
+                            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">4</div>
+                            <div>
+                                <h6 class="mb-1">Ritmo Constante</h6>
+                                <p class="text-muted mb-0 small">Mantenha ritmo que permita conversar. Respire pelo nariz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100 demo-visual">
+                <div class="card-body text-center p-4">
+                    <h6 class="text-muted mb-3">Demonstração Visual</h6>
+                    <div class="exercise-demo mb-4 py-3">
+                        <i class="fas fa-walking fa-8x text-primary walking-animation"></i>
+                    </div>
+                    <div class="progress mb-3" style="height: 10px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 100%"></div>
+                    </div>
+                    <p class="small text-muted">Movimento contínuo e relaxado</p>
+                    
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-lightbulb me-2"></i>
+                        <strong>Dica:</strong> Use calçados confortáveis e caminhe em superfícies planas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Alongamento -->
+    <div class="row g-4 mb-5">
+        <div class="col-12">
+            <h2 class="h3 mb-4 border-start border-4 border-success ps-3">2. Alongamento Sentado</h2>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-chair me-2"></i>Passo a Passo</h5>
+                </div>
+                <div class="card-body">
+                    <div class="demo-steps">
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">1</div>
+                            <div>
+                                <h6 class="mb-1">Posição na Cadeira</h6>
+                                <p class="text-muted mb-0 small">Sente-se na ponta da cadeira, pés firmes no chão, coluna ereta.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">2</div>
+                            <div>
+                                <h6 class="mb-1">Braços para Cima</h6>
+                                <p class="text-muted mb-0 small">Inspire e levante os braços lentamente, alongando a coluna.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">3</div>
+                            <div>
+                                <h6 class="mb-1">Rotação do Tronco</h6>
+                                <p class="text-muted mb-0 small">Gire o tronco para a direita, segure 10 segundos. Repita.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex">
+                            <div class="step-number bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">4</div>
+                            <div>
+                                <h6 class="mb-1">Alongamento de Pernas</h6>
+                                <p class="text-muted mb-0 small">Estenda uma perna, flexione o pé e incline-se suavemente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100 demo-visual">
+                <div class="card-body text-center p-4">
+                    <h6 class="text-muted mb-3">Demonstração Visual</h6>
+                    <div class="exercise-demo mb-4 py-3">
+                        <i class="fas fa-chair text-secondary mb-3 d-block fa-3x"></i>
+                        <i class="fas fa-user text-success fa-5x stretching-animation"></i>
+                    </div>
+                    <div class="timer-display bg-light rounded p-2 mb-3">
+                        <span class="h4 text-success mb-0">⏱️ 10 segundos</span>
+                        <small class="d-block text-muted">Segure cada posição</small>
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Atenção:</strong> Nunca force o alongamento. Sinta o alongamento, não a dor.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Hidroginástica -->
+    <div class="row g-4 mb-5">
+        <div class="col-12">
+            <h2 class="h3 mb-4 border-start border-4 border-info ps-3">3. Hidroginástica</h2>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-water me-2"></i>Passo a Passo</h5>
+                </div>
+                <div class="card-body">
+                    <div class="demo-steps">
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">1</div>
+                            <div>
+                                <h6 class="mb-1">Entrada na Água</h6>
+                                <p class="text-muted mb-0 small">Entre na piscina até a altura da cintura ou peito.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">2</div>
+                            <div>
+                                <h6 class="mb-1">Caminhada na Água</h6>
+                                <p class="text-muted mb-0 small">Caminhe de um lado para outro, sentindo a resistência.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">3</div>
+                            <div>
+                                <h6 class="mb-1">Abdominais Verticais</h6>
+                                <p class="text-muted mb-0 small">Apoie as costas na parede, eleve os joelhos.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex">
+                            <div class="step-number bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">4</div>
+                            <div>
+                                <h6 class="mb-1">Movimentos com Halteres</h6>
+                                <p class="text-muted mb-0 small">Use halteres aquáticos para fortalecer braços.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100 demo-visual bg-light">
+                <div class="card-body text-center p-4">
+                    <h6 class="text-muted mb-3">Demonstração Visual</h6>
+                    <div class="exercise-demo mb-4 py-3 position-relative">
+                        <div class="bg-info bg-opacity-25 p-4 rounded">
+                            <i class="fas fa-swimmer fa-7x text-info water-animation"></i>
+                            <div class="water-waves mt-2">
+                                <span class="wave">〰️</span>
+                                <span class="wave">〰️</span>
+                                <span class="wave">〰️</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge bg-info text-dark mb-2">Zero Impacto Articular</div>
+                    <p class="small text-muted">A água suporta 90% do peso corporal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Pilates -->
+    <div class="row g-4 mb-5">
+        <div class="col-12">
+            <h2 class="h3 mb-4 border-start border-4 border-warning ps-3">4. Pilates Iniciante</h2>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0"><i class="fas fa-spa me-2"></i>Passo a Passo</h5>
+                </div>
+                <div class="card-body">
+                    <div class="demo-steps">
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">1</div>
+                            <div>
+                                <h6 class="mb-1">Posição Deitada</h6>
+                                <p class="text-muted mb-0 small">Deite-se de costas, joelhos flexionados, pés no chão.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">2</div>
+                            <div>
+                                <h6 class="mb-1">Respiração</h6>
+                                <p class="text-muted mb-0 small">Inspire pelo nariz, expire pela boca contraindo o abdômen.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex mb-3">
+                            <div class="step-number bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">3</div>
+                            <div>
+                                <h6 class="mb-1">Elevação de Pernas</h6>
+                                <p class="text-muted mb-0 small">Eleve uma perna de cada vez, mantendo abdômen contraído.</p>
+                            </div>
+                        </div>
+                        <div class="step-item d-flex">
+                            <div class="step-number bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; flex-shrink: 0;">4</div>
+                            <div>
+                                <h6 class="mb-1">Abdominal Supra Leve</h6>
+                                <p class="text-muted mb-0 small">Eleve apenas a cabeça e ombros, sem puxar o pescoço.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100 demo-visual">
+                <div class="card-body text-center p-4">
+                    <h6 class="text-muted mb-3">Demonstração Visual</h6>
+                    <div class="exercise-demo mb-4 py-3">
+                        <div class="bg-light p-4 rounded">
+                            <i class="fas fa-user text-warning fa-6x pilates-animation"></i>
+                            <div class="breath-indicator mt-3">
+                                <span class="badge bg-success breath-in">INSPIRE</span>
+                                <span class="mx-2">→</span>
+                                <span class="badge bg-secondary breath-out">EXPIRE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="small text-muted">Foco na respiração e controle do core</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="row mt-5">
+        <div class="col-lg-8 mx-auto text-center">
+            <div class="card border-0 shadow-lg bg-primary text-white p-5">
+                <h3 class="mb-3">Quer ver em 3D?</h3>
+                <p class="mb-4">Experimente nosso visualizador 3D interativo com animações em tempo real.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="{{ url_for('exercicio_3d') }}" class="btn btn-light btn-lg px-5">
+                        <i class="fas fa-cube me-2"></i>Abrir Visualizador 3D
+                    </a>
+                    <a href="{{ url_for('exercicios') }}" class="btn btn-outline-light btn-lg px-5">
+                        <i class="fas fa-list me-2"></i>Ver Lista Completa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

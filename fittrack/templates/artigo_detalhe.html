@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{ artigo.titulo }}{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Início</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('artigos') }}">Artigos</a></li>
+            <li class="breadcrumb-item active">{{ artigo.titulo[:30] }}...</li>
+        </ol>
+    </nav>
+    
+    <article class="card border-0 shadow-sm">
+        <div class="card-body p-5">
+            <span class="badge bg-primary mb-3">{{ artigo.categoria }}</span>
+            <h1 class="display-6 fw-bold mb-3">{{ artigo.titulo }}</h1>
+            
+            <div class="d-flex align-items-center text-muted mb-4 pb-4 border-bottom">
+                <i class="fas fa-user-circle me-2"></i>
+                <span class="me-4">{{ artigo.autor }}</span>
+                <i class="fas fa-calendar me-2"></i>
+                <span>{{ artigo.data_publicacao[:10] }}</span>
+            </div>
+            
+            <div class="article-content">
+                {{ artigo.conteudo|safe }}
+            </div>
+            
+            <div class="mt-5 pt-4 border-top">
+                <a href="{{ url_for('artigos') }}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Voltar para artigos
+                </a>
+            </div>
+        </div>
+    </article>
+</div>
+{% endblock %}

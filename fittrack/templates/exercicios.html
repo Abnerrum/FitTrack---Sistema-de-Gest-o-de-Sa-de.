@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Exercícios{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+        <h1 class="h2"><i class="fas fa-dumbbell text-primary me-3"></i>Exercícios para Pré-Bariátrica</h1>
+        <div class="d-flex gap-2 mt-2 mt-md-0">
+            <a href="{{ url_for('exercicio_3d') }}" class="btn btn-info">
+                <i class="fas fa-cube me-2"></i>Ver em 3D
+            </a>
+            <span class="badge bg-primary fs-6 d-flex align-items-center">{{ exercicios|length }} exercícios</span>
+        </div>
+    </div>
+    
+    <div class="alert alert-info mb-4">
+        <i class="fas fa-info-circle me-2"></i>
+        <strong>Importante:</strong> Consulte seu médico antes de iniciar qualquer atividade física. Estes exercícios são especialmente selecionados para baixo impacto e segurança.
+    </div>
+
+    <div class="row g-4">
+        {% for ex in exercicios %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm exercise-card">
+                <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <span class="badge bg-{{ 'success' if ex.categoria == 'Cardio' else 'info' if ex.categoria == 'Aquático' else 'warning' if ex.categoria == 'Flexibilidade' else 'secondary' }}">
+                            {{ ex.categoria }}
+                        </span>
+                        <span class="badge bg-{{ 'success' if ex.intensidade == 'Baixa' else 'warning' if ex.intensidade == 'Moderada' else 'danger' }}">
+                            {{ ex.intensidade }}
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body px-4">
+                    <h5 class="card-title mb-3">{{ ex.nome }}</h5>
+                    <p class="card-text text-muted mb-3">{{ ex.descricao }}</p>
+                    
+                    <div class="d-flex align-items-center text-muted mb-3">
+                        <i class="fas fa-clock me-2"></i>
+                        <span>{{ ex.duracao_minutos }} minutos</span>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <small class="text-uppercase text-muted fw-bold">Benefícios:</small>
+                        <p class="small text-muted mb-0">{{ ex.beneficios }}</p>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-top-0 px-4 pb-4">
+                    <button class="btn btn-outline-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#instrucoes{{ ex.id }}">
+                        <i class="fas fa-list-ol me-2"></i>Ver Instruções
+                    </button>
+                    <div class="collapse mt-3" id="instrucoes{{ ex.id }}">
+                        <div class="bg-light p-3 rounded">
+                            <pre class="mb-0 small" style="white-space: pre-wrap; font-family: inherit;">{{ ex.instrucoes }}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

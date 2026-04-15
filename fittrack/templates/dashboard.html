@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-header py-4 bg-primary text-white">
+    <div class="container pt-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                <h1 class="h3 mb-1">Olá, {{ session.user_name }}! 👋</h1>
+                <p class="mb-0 opacity-75">Acompanhe seu progresso na preparação para a cirurgia</p>
+            </div>
+            <div class="d-flex gap-2 mt-3 mt-md-0">
+                <a href="{{ url_for('exercicio_3d') }}" class="btn btn-info">
+                    <i class="fas fa-cube me-2"></i>3D
+                </a>
+                <a href="{{ url_for('exercicios') }}" class="btn btn-light">
+                    <i class="fas fa-play me-2"></i>Iniciar Treino
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <!-- Progress Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-gradient-primary text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-uppercase opacity-75 mb-1">Exercícios Realizados</h6>
+                            <h2 class="mb-0">{{ progresso.exercicios_realizados }}</h2>
+                        </div>
+                        <i class="fas fa-check-circle fa-2x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-gradient-success text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-uppercase opacity-75 mb-1">Dias Consecutivos</h6>
+                            <h2 class="mb-0">{{ progresso.dias_consecutivos }}</h2>
+                        </div>
+                        <i class="fas fa-fire fa-2x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-gradient-info text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-uppercase opacity-75 mb-1">Calorias Queimadas</h6>
+                            <h2 class="mb-0">{{ progresso.calorias_queimadas }}</h2>
+                        </div>
+                        <i class="fas fa-burn fa-2x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Access -->
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <h5 class="mb-0"><i class="fas fa-dumbbell text-primary me-2"></i>Seus Exercícios</h5>
+                </div>
+                <div class="card-body p-4">
+                    <p class="text-muted mb-4">Total de {{ total_exercicios }} exercícios disponíveis para sua preparação pré-bariátrica.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <a href="{{ url_for('exercicios') }}" class="d-block p-3 rounded bg-light text-decoration-none hover-card">
+                                <i class="fas fa-list text-primary mb-2 fa-lg"></i>
+                                <h6 class="mb-1">Ver Todos</h6>
+                                <small class="text-muted">Lista completa de exercícios</small>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{ url_for('exercicio_3d') }}" class="d-block p-3 rounded bg-light text-decoration-none hover-card">
+                                <i class="fas fa-cube text-info mb-2 fa-lg"></i>
+                                <h6 class="mb-1">Modo 3D</h6>
+                                <small class="text-muted">Animações interativas</small>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{ url_for('demo') }}" class="d-block p-3 rounded bg-light text-decoration-none hover-card">
+                                <i class="fas fa-play-circle text-success mb-2 fa-lg"></i>
+                                <h6 class="mb-1">Demonstração</h6>
+                                <small class="text-muted">Ver animações guiadas</small>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#" class="d-block p-3 rounded bg-light text-decoration-none hover-card">
+                                <i class="fas fa-calendar-check text-warning mb-2 fa-lg"></i>
+                                <h6 class="mb-1">Meu Plano</h6>
+                                <small class="text-muted">Rotina semanal personalizada</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <h5 class="mb-0"><i class="fas fa-book-medical text-success me-2"></i>Artigos de Saúde</h5>
+                </div>
+                <div class="card-body p-4">
+                    <p class="text-muted mb-4">{{ total_artigos }} artigos disponíveis para leitura.</p>
+                    <a href="{{ url_for('artigos') }}" class="btn btn-outline-success">Ler Artigos</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm bg-light">
+                <div class="card-body p-4">
+                    <h6 class="text-uppercase text-muted mb-3">Dica do Dia</h6>
+                    <div class="d-flex">
+                        <i class="fas fa-lightbulb text-warning fa-2x me-3"></i>
+                        <div>
+                            <p class="mb-0">Hidrate-se! Beba pelo menos 2 litros de água por dia, preferencialmente entre as refeições.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-body p-4 text-center">
+                    <i class="fas fa-trophy text-warning fa-3x mb-3"></i>
+                    <h6>Continue assim!</h6>
+                    <p class="small text-muted mb-0">Você está no caminho certo para uma cirurgia bem-sucedida.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
